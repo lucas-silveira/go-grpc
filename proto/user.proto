@@ -2,6 +2,11 @@ syntax = "proto3";
 package pb;
 option go_package = "/";
 
+message UserResultStream {
+  string status = 1;
+  User user = 2;
+}
+
 message User {
   string id = 1;
   string name = 2;
@@ -10,4 +15,5 @@ message User {
 
 service UserService {
   rpc AddUser (User) returns (User);
+  rpc AddUserVerbose (User) returns (stream UserResultStream);
 }
