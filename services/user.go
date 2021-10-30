@@ -93,5 +93,4 @@ func (*UserService) AddUsers(stream pb.UserService_AddUsersServer) error {
 
 		fmt.Println("Added", req.GetName())
 	}
-
 }
